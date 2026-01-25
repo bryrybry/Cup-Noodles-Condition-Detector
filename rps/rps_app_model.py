@@ -59,8 +59,8 @@ def model_output_for_TL (pre_trained_model, last_output):
     return model
 
 
-train_dir = os.path.join('./datasets/train/')
-test_dir = os.path.join('./datasets/test/')
+train_dir = os.path.join('./rps/datasets/train/')
+test_dir = os.path.join('./rps/datasets/test/')
 
 train_generator, validation_generator, test_generator = image_gen_w_aug(train_dir, test_dir)
 
