@@ -35,7 +35,7 @@ for video_path in video_paths:
     if not video_path:
         raise SystemExit("No file selected")
 
-    cap = cv2.VideoCapture(video_path)
+    cap = cv2.VideoCapture(video_path) # Opens video file
     if not cap.isOpened():
         raise SystemExit("Cannot open video")
 
@@ -52,9 +52,9 @@ for video_path in video_paths:
     saved_idx = 0
 
     while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
+        ret, frame = cap.read() # read NEXT frame
+        if not ret: 
+            break # no more frames in the video
 
         if frame_idx % step == 0:
             cv2.imwrite(f"{output_dir}/{filename}_{saved_idx}.jpg", frame)
